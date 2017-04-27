@@ -50,7 +50,7 @@ var LINE_OPTIONS = {
         yAxes:[{
             scaleLabel:{
                 display: true,
-                labelString: 'speed (m/h)'
+                labelString: 'speed (km/h)'
             }
         }]
     }

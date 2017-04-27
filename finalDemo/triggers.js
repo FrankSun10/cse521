@@ -1,6 +1,6 @@
 
 var numTargets = 0; // variable used to keep track of number of targets created in creating a trigger
-var options = {"speed(mph)":"speed", "rpms":"rpms", "fuel(%)":"fuel", "pedal position(%)": "pedal position"};
+var options = {"speed(km/h)":"speed", "rpms":"rpms", "fuel(%)":"fuel", "pedal position(%)": "pedal position"};
 var comparators ={">":">", "<":"<", "=":"="};
 var things = {};
 
@@ -261,7 +261,7 @@ function createFirstRowForTrigger(){
     thingDiv.setAttribute("class", "col-sm-3");
     var thingName = document.createElement("select");
     thingName.options[thingName.options.length] = new Option("Name of the thing", "placeholder");
-    for(var index in things) thingName.options[thingName.options.length] = new Option(things[index], index);
+    for(var index in things) thingName.options[thingName.options.length] = new Option(index, things[index]);
     thingName.setAttribute("placeholder", "Name of the thing");
     thingName.setAttribute("class", "form-control");
     thingName.setAttribute("id", "triggerThing");
@@ -273,7 +273,7 @@ function createFirstRowForTrigger(){
     properties.setAttribute("class", "form-control col-xs-4");
     properties.setAttribute("id", "triggerProperty");
     properties.options[properties.options.length] = new Option("Select a property", "placeholder");
-    for(var index in options) properties.options[properties.options.length] = new Option(options[index], index);
+    for(var index in options) properties.options[properties.options.length] = new Option(index, options[index]);
     propertyDiv.appendChild(properties);
 
     var compDiv = document.createElement("div");
